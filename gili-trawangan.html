@@ -2,9 +2,11 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Detail Destinasi: Gili Trawangan - Lombok Wanderlust</title>
+  <title>Gili Trawangan - Lombok Wanderlust</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts for Heading -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -20,74 +22,35 @@
       background: rgba(255,255,255,0.8);
       backdrop-filter: blur(8px);
     }
-    .detail-section h2 {
-      font-family: 'Montserrat', Arial, sans-serif;
-      font-weight: 700;
-      font-size: 1.75rem;
-      color: #1d4ed8;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-    }
-    .detail-section h3 {
-      font-family: 'Montserrat', Arial, sans-serif;
-      font-weight: 600;
-      font-size: 1.25rem;
-      color: #2563eb;
-      margin-top: 1.5rem;
-      margin-bottom: 0.75rem;
-    }
-    .detail-section p {
-      margin-bottom: 1rem;
-      line-height: 1.6;
-      color: #374151;
-    }
-    .detail-section ul {
-      list-style-type: disc;
-      margin-left: 1.5rem;
-      margin-bottom: 1rem;
-      color: #374151;
-    }
-    .detail-section ol {
-      list-style-type: decimal;
-      margin-left: 1.5rem;
-      margin-bottom: 1rem;
-      color: #374151;
-    }
-    .detail-section img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 0.5rem;
-      margin-top: 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
   </style>
 </head>
 <body class="bg-gradient-to-tl from-blue-50 via-white to-blue-100 min-h-screen text-gray-800">
 
-  <!-- Navbar -->
+  <!-- Navbar (Salin dari index.html atau air-terjun-tiu-kelep.html) -->
   <header class="fixed w-full bg-white/90 shadow-md z-20">
     <nav class="flex items-center justify-between px-6 py-3 max-w-7xl mx-auto">
       <div class="flex items-center gap-2">
         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-cyan-400 flex items-center justify-center shadow">
           <img
             src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0937cc3b-ceb1-4417-96e8-bed5efc2a3ce.png"
-            alt="Logo Lombok Wanderlust, lingkaran biru dengan inisial LW putih, desain modern minimalis"
+            alt="Logo Lomboko Wanderlust, lingkaran biru dengan inisial LW putih, desain modern minimalis"
             class="w-8 h-8 rounded-full"
             onerror='this.style.display="none";this.parentNode.style.background="#1e40af";this.parentNode.innerHTML="<span style=\"color:white;font-size:20px;font-weight:bold;\">LW</span>";'
           />
         </div>
-        <span class="font-brand font-extrabold text-xl tracking-wider text-blue-700">Lombok Wanderlust</span>
+        <a href="index.html" class="font-brand font-extrabold text-xl tracking-wider text-blue-700 hover:text-blue-800 transition">Lombok Wanderlust</a>
       </div>
 
+      <!-- Desktop Navigation -->
       <div class="hidden lg:flex gap-6 font-medium text-gray-700">
-        <a href="paket-wisata.html" class="hover:text-blue-700 transition">Paket Wisata</a>
-        <a href="wisata.html" class="hover:text-blue-700 transition">Wisata</a>
-        <a href="galeri.html" class="hover:text-blue-700 transition">Galeri</a>
+        <a href="index.html#explore" class="hover:text-blue-700 transition">Paket Wisata</a>
+        <a href="wisata.html" class="hover:text-blue-700 transition">Destinasi</a>
+        <a href="index.html#gallery" class="hover:text-blue-700 transition">Galeri</a>
         <a href="index.html#about" class="hover:text-blue-700 transition">Tentang</a>
         <a href="index.html#contact" class="hover:text-blue-700 transition">Kontak</a>
       </div>
 
+      <!-- Mobile Menu Button -->
       <div class="lg:hidden flex items-center">
         <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
           <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -97,62 +60,96 @@
       </div>
     </nav>
 
+    <!-- Mobile Menu (Hidden by default) -->
     <div id="mobile-menu" class="hidden lg:hidden bg-white/95 shadow-lg py-4">
-      <a href="paket-wisata.html" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Paket Wisata</a>
-      <a href="wisata.html" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Wisata</a>
-      <a href="galeri.html" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Galeri</a>
+      <a href="index.html#explore" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Paket Wisata</a>
+      <a href="wisata.html" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Destinasi</a>
+      <a href="index.html#gallery" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Galeri</a>
       <a href="index.html#about" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Tentang</a>
       <a href="index.html#contact" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Kontak</a>
     </div>
   </header>
 
-  <main class="pt-24">
-    <section class="max-w-4xl mx-auto px-6 py-10">
+  <main class="pt-24 pb-10">
+    <div class="max-w-5xl mx-auto px-6">
+    
       <div class="bg-white glass rounded-2xl shadow-xl p-8 md:p-10">
-        <h1 class="font-brand text-3xl md:text-4xl font-bold text-blue-700 mb-4 text-center">Gili Trawangan</h1>
-        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7a9e2be1-b1e8-4154-bb76-1c7767310968.png" alt="Gili Trawangan" class="w-full h-auto rounded-lg mb-6">
+        <div class="flex flex-col md:flex-row gap-8">
+          <div class="md:w-2/3">
+            <img
+              src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7a9e2be1-b1e8-4154-bb76-1c7767310968.png"
+              alt="Gili Trawangan Lombok"
+              class="rounded-lg w-full h-auto object-cover mb-6 shadow-md"
+            />
+            <h1 class="font-brand text-3xl md:text-4xl font-bold text-blue-700 mb-4">Gili Trawangan</h1>
+            <p class="text-gray-700 text-lg mb-4">
+              Gili Trawangan adalah pulau terbesar dari tiga pulau Gili (Trawangan, Meno, Air) yang terletak di lepas pantai barat laut Lombok. Dikenal sebagai surga tropis bebas kendaraan bermotor, Gili Trawangan menawarkan kombinasi sempurna antara keindahan alam bawah laut yang menakjubkan, pantai berpasir putih, dan suasana yang hidup baik siang maupun malam.
+            </p>
+            <p class="text-gray-700 mb-4">
+              Pulau ini menjadi magnet bagi wisatawan dari seluruh dunia yang mencari pengalaman liburan yang santai namun penuh petualangan. Dengan larangan kendaraan bermotor, satu-satunya transportasi di pulau ini adalah sepeda atau cidomo (kereta kuda tradisional), menambah pesona unik dan ramah lingkungan.
+            </p>
 
-        <div class="detail-section text-gray-700">
-          <p>
-            Gili Trawangan adalah pulau terbesar dan paling ramai di antara tiga Gili (Gili Trawangan, Gili Meno, dan Gili Air) yang terletak di sebelah barat laut Lombok. Pulau ini terkenal dengan keindahan pantainya, kehidupan malam yang meriah, dan berbagai aktivitas air yang menarik.
-          </p>
+            <h2 class="font-brand text-2xl font-bold text-blue-700 mb-3 mt-6">Daya Tarik Utama</h2>
+            <ul class="list-disc list-inside text-gray-700 mb-4 space-y-2">
+              <li>
+                **Snorkeling & Diving:** Perairan di sekitar Gili Trawangan adalah rumah bagi keanekaragaman hayati laut yang luar biasa, termasuk penyu, ikan warna-warni, dan terumbu karang yang sehat. Banyak spot snorkeling dan diving yang mudah dijangkau.
+              </li>
+              <li>
+                **Pantai Pasir Putih & Sunset:** Nikmati keindahan pantai berpasir putih yang lembut, berjemur, atau bersantai di bawah pohon kelapa. Jangan lewatkan pemandangan matahari terbenam yang spektakuler dari sisi barat pulau.
+              </li>
+              <li>
+                **Kehidupan Malam yang Hidup:** Meskipun santai di siang hari, Gili Trawangan berubah menjadi pusat hiburan di malam hari dengan berbagai bar, restoran, dan pesta pantai yang sering diadakan.
+              </li>
+              <li>
+                **Bebas Kendaraan Bermotor:** Pengalaman unik menjelajahi pulau dengan berjalan kaki, bersepeda, atau naik cidomo, menciptakan suasana yang tenang dan bebas polusi.
+              </li>
+              <li>
+                **Pulau Hopping:** Mudah untuk mengunjungi dua pulau Gili lainnya, Gili Meno dan Gili Air, untuk pengalaman yang lebih tenang atau aktivitas seperti mengunjungi penangkaran penyu di Gili Meno.
+              </li>
+            </ul>
 
-          <h2>Aktivitas yang Bisa Dilakukan:</h2>
-          <ul>
-            <li>Snorkeling dan diving di spot-spot terbaik.</li>
-            <li>Bersepeda keliling pulau.</li>
-            <li>Menikmati sunset di bar tepi pantai.</li>
-            <li>Berpartisipasi dalam pesta malam di bar dan klub.</li>
-          </ul>
+            <h2 class="font-brand text-2xl font-bold text-blue-700 mb-3 mt-6">Aktivitas Populer</h2>
+            <ul class="list-disc list-inside text-gray-700 mb-4 space-y-2">
+              <li>
+                **Belajar Diving:** Banyak sekolah diving bersertifikat yang menawarkan kursus untuk pemula hingga tingkat lanjut.
+              </li>
+              <li>
+                **Paddleboarding & Kayaking:** Sewa paddleboard atau kayak untuk menjelajahi perairan dangkal di sekitar pulau.
+              </li>
+              <li>
+                **Menunggang Kuda:** Nikmati pemandangan pulau dengan menunggang kuda di sepanjang pantai.
+              </li>
+              <li>
+                **Yoga & Meditasi:** Beberapa resor menawarkan kelas yoga dengan pemandangan laut yang menenangkan.
+              </li>
+            </ul>
 
-          <h2>Tips Berkunjung:</h2>
-          <ul>
-            <li>Gunakan sunscreen untuk melindungi kulit dari sinar matahari.</li>
-            <li>Jangan lupa membawa kamera untuk mengabadikan momen indah.</li>
-            <li>Hindari menggunakan kendaraan bermotor, karena pulau ini bebas dari kendaraan bermotor.</li>
-          </ul>
+            <p class="text-gray-700 mt-6">
+              Gili Trawangan adalah destinasi yang sempurna bagi Anda yang mencari kombinasi relaksasi di pantai, petualangan bawah laut, dan suasana sosial yang hidup.
+            </p>
+          </div>
 
-          <h2>Transportasi:</h2>
-          <p>
-            Anda dapat mencapai Gili Trawangan dengan perahu dari Pelabuhan Bangsal di Lombok. Terdapat beberapa pilihan perahu, termasuk perahu cepat dan perahu tradisional.
-          </p>
-
-          <h2>Penginapan:</h2>
-          <p>
-            Terdapat berbagai pilihan akomodasi mulai dari hostel, hotel, hingga villa mewah yang dapat disesuaikan dengan anggaran Anda.
-          </p>
-
-          <div class="mt-8 text-center">
-            <a href="paket-wisata.html" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-full shadow hover:bg-blue-700 transition">
-              &larr; Kembali ke Daftar Paket Wisata
-            </a>
+          <div class="md:w-1/3">
+            <div class="bg-blue-50 rounded-lg p-6 shadow-md">
+              <h3 class="font-bold text-blue-700 text-xl mb-4">Informasi Singkat</h3>
+              <ul class="text-gray-700 space-y-2">
+                <li><strong>Lokasi:</strong> Barat Laut Lombok, Nusa Tenggara Barat</li>
+                <li><strong>Transportasi:</strong> Perahu dari Bangsal (Lombok), atau fast boat dari Bali</li>
+                <li><strong>Aktivitas:</strong> Snorkeling, diving, bersepeda, bersantai di pantai, pesta pantai</li>
+                <li><strong>Waktu Terbaik:</strong> Musim kemarau (Mei - September)</li>
+                <li><strong>Akses:</strong> Hanya dengan perahu, tidak ada kendaraan bermotor di pulau</li>
+              </ul>
+              <a href="index.html#contact" class="mt-6 inline-block bg-blue-600 text-white font-bold px-6 py-2 rounded-full shadow hover:bg-blue-700 transition-all duration-300 w-full text-center">
+                Pesan Paket ke Gili Trawangan
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   </main>
 
-  <!-- Footer -->
+  <!-- Footer (Salin dari index.html atau air-terjun-tiu-kelep.html) -->
   <footer class="bg-blue-800 text-white mt-12 py-7">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center px-6 gap-4">
       <div>
@@ -160,23 +157,25 @@
         <span class="text-gray-400 hidden md:inline-block ml-3">All Rights Reserved.</span>
       </div>
       <div class="flex gap-6">
-        <a href="paket-wisata.html" class="hover:underline text-gray-200">Paket Wisata</a>
+        <a href="index.html#explore" class="hover:underline text-gray-200">Paket Wisata</a>
         <a href="index.html#about" class="hover:underline text-gray-200">Tentang</a>
         <a href="index.html#contact" class="hover:underline text-gray-200">Kontak</a>
       </div>
     </div>
   </footer>
 
-  <!-- Floating Social Media Widgets -->
+  <!-- Floating Social Media Widgets (Salin dari index.html atau air-terjun-tiu-kelep.html) -->
   <div class="fixed flex flex-col gap-3 z-40" style="right:2rem;bottom:2rem;">
     <a href="https://wa.me/62811222333" target="_blank" rel="noopener" aria-label="Whatsapp Lombok Wanderlust"
       class="bg-green-500 hover:bg-green-600 text-white rounded-full p-3 shadow-xl flex items-center justify-center transition">
+      <!-- WhatsApp SVG -->
       <svg width="28" height="28" fill="currentColor" viewBox="0 0 32 32">
         <path d="M16.003 5.334c-5.894 0-10.67 4.78-10.67 10.67a10.61 10.61 0 001.502 5.475l-1.565 5.623a1.337 1.337 0 001.637 1.641l5.583-1.566A10.644 10.644 0 0016 26.67c5.892 0 10.669-4.779 10.669-10.667 0-5.89-4.777-10.669-10.666-10.669zm0 19.186a8.491 8.491 0 01-4.331-1.19l-.312-.184-3.316.933.938-3.23-.203-.329a8.453 8.453 0 01-1.41-4.653c0-4.679 3.811-8.489 8.489-8.489 4.678 0 8.488 3.81 8.488 8.489s-3.811 8.489-8.489 8.489zm4.274-6.386c-.227-.114-1.344-.664-1.552-.74-.208-.076-.36-.114-.512.114-.152.228-.585.74-.717.893-.133.152-.264.171-.491.057-.228-.114-.959-.353-1.825-1.124-.675-.601-1.13-1.344-1.263-1.572-.133-.228-.014-.351.1-.464.102-.102.227-.265.34-.398.115-.133.151-.228.227-.379.075-.15.037-.285-.019-.398-.057-.114-.508-1.231-.697-1.686-.184-.439-.373-.378-.512-.385l-.433-.009c-.151 0-.396.057-.604.266s-.793.774-.793 1.887.812 2.196.924 2.348c.113.152 1.604 2.448 3.895 3.337.544.187.967.299 1.297.383.545.138 1.041.119 1.431.072.437-.053 1.344-.548 1.534-1.078.19-.53.19-.984.133-1.077-.056-.094-.207-.152-.434-.266z"/>
       </svg>
     </a>
     <a href="https://t.me/lombokwanderlust" target="_blank" rel="noopener" aria-label="Telegram Lombok Wanderlust"
       class="bg-blue-400 hover:bg-blue-600 text-white rounded-full p-3 shadow-xl flex items-center justify-center transition">
+      <!-- Telegram SVG -->
       <svg width="28" height="28" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
         <circle cx="120" cy="120" r="120" fill="#37AEE2"/>
         <path d="M168 77c2-1 4 0 4 2l-21 101c0 2-3 3-4 1l-30-22-15 14c-1 1-3 1-3-1l3-19 66-62c1-1-1-2-2-1l-81 51-17-5c-2 0-2-2 0-3l134-53z" fill="#FFF"/>
@@ -184,6 +183,7 @@
     </a>
     <a href="mailto:support@lombokwanderlust.com" aria-label="Email Lombok Wanderlust"
       class="bg-red-500 hover:bg-red-600 text-white rounded-full p-3 shadow-xl flex items-center justify-center transition">
+      <!-- Email SVG -->
       <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path d="M2.003 5.884L11.999 11.884L21.997 5.884C21.997 5.884 22 5.884 22 5.884V18.001C22 19.105 21.105 20.001 20 20.001H4C2.895 20.001 2 19.105 2 18.001V5.884C2 5.884 2.003 5.884 2.003 5.884ZM20 4.001H4C3.447 4.001 3 4.448 3 5.001V5.884L12 11.384L21 5.884V5.001C21 4.448 20.553 4.001 20 4.001Z"/>
       </svg>
