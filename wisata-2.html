@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Destinasi Wisata - Lombok Wanderlust</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts for Heading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+    }
+    .font-brand {
+      font-family: 'Montserrat', Arial, sans-serif;
+      letter-spacing: 1.5px;
+    }
+    .glass {
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(8px);
+    }
+    .feature-card:hover {
+      transform: translateY(-5px) scale(1.025);
+      box-shadow: 0 8px 32px rgba(45,88,176,0.07);
+      background: rgba(255,255,255,0.90);
+    }
+    /* Custom style for larger feature card images */
+    .feature-card-img {
+      width: 100%; /* Make image take full width of its container */
+      max-width: 180px; /* Increased max-width for better visibility */
+      height: auto; /* Maintain aspect ratio */
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-tl from-blue-50 via-white to-blue-100 min-h-screen text-gray-800">
+
+  <!-- Navbar (Identik dengan index.html dan destinasi-wisata.html) -->
+  <header class="fixed w-full bg-white/90 shadow-md z-20">
+    <nav class="flex items-center justify-between px-6 py-3 max-w-7xl mx-auto">
+      <div class="flex items-center gap-2">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-cyan-400 flex items-center justify-center shadow">
+          <img
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0937cc3b-ceb1-4417-96e8-bed5efc2a3ce.png"
+            alt="Logo Lomboko Wanderlust, lingkaran biru dengan inisial LW putih, desain modern minimalis"
+            class="w-8 h-8 rounded-full"
+            onerror='this.style.display="none";this.parentNode.style.background="#1e40af";this.parentNode.innerHTML="<span style=\"color:white;font-size:20px;font-weight:bold;\">LW</span>";'
+          />
+        </div>
+        <a href="index.html" class="font-brand font-extrabold text-xl tracking-wider text-blue-700 hover:text-blue-800 transition">Lombok Wanderlust</a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex gap-6 font-medium text-gray-700">
+        <a href="index.html#explore" class="hover:text-blue-700 transition">Paket Wisata</a>
+        <a href="wisata.html" class="hover:text-blue-700 transition">Destinasi</a>
+        <a href="index.html#gallery" class="hover:text-blue-700 transition">Galeri</a>
+        <a href="index.html#about" class="hover:text-blue-700 transition">Tentang</a>
+        <a href="index.html#contact" class="hover:text-blue-700 transition">Kontak</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="lg:hidden flex items-center">
+        <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu (Identik dengan index.html dan destinasi-wisata.html) -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white/95 shadow-lg py-4">
+      <a href="index.html#explore" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Paket Wisata</a>
+      <a href="wisata.html" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Destinasi</a>
+      <a href="index.html#gallery" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Galeri</a>
+      <a href="index.html#about" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Tentang</a>
+      <a href="index.html#contact" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 transition">Kontak</a>
+    </div>
+  </header>
+
+  <main class="pt-28 pb-10">
+    <section id="all-destinations" class="max-w-7xl mx-auto px-6 py-10">
+      <div class="text-center mb-10">
+        <h1 class="font-brand text-4xl md:text-5xl font-bold text-blue-700 mb-3">Destinasi Wisata Lainnya di Lombok</h1>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          Temukan lebih banyak keindahan dan keunikan Pulau Lombok. Setiap destinasi menawarkan pengalaman yang berbeda dan tak terlupakan.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Destinasi 1: Gili Air -->
+        <div class="bg-white rounded-2xl shadow p-6 flex flex-col items-center group hover:shadow-lg transition">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/gili-air.png" alt="Gili Air" class="rounded-lg mb-4 object-cover w-full h-[180px]">
+          <h3 class="font-bold text-blue-700 text-xl mb-2">Gili Air</h3>
+          <p class="text-gray-700 text-sm text-center">Pulau kecil yang tenang, ideal untuk bersantai dan snorkeling dengan keindahan bawah laut yang menakjubkan.</p>
+          <a href="gili-air.html" class="text-blue-600 font-semibold hover:underline mt-4">Lihat Detail</a>
+        </div>
+
+        <!-- Destinasi 2: Bukit Pergasingan -->
+        <div class="bg-white rounded-2xl shadow p-6 flex flex-col items-center group hover:shadow-lg transition">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bukit-pergasingan.png" alt="Bukit Pergasingan" class="rounded-lg mb-4 object-cover w-full h-[180px]">
+          <h3 class="font-bold text-blue-700 text-xl mb-2">Bukit Pergasingan</h3>
+          <p class="text-gray-700 text-sm text-center">Tempat trekking yang populer dengan pemandangan spektakuler, terutama saat sunrise dan sunset.</p>
+          <a href="bukit-pergasingan.html" class="text-blue-600 font-semibold hover:underline mt-4">Lihat Detail</a>
+        </div>
+
+        <!-- Destinasi 3: Pantai Mawun -->
+        <div class="bg-white rounded-2xl shadow p-6 flex flex-col items-center group hover:shadow-lg transition">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/pantai-mawun.png" alt="Pantai Mawun" class="rounded-lg mb-4 object-cover w-full h-[180px]">
+          <h3 class="font-bold text-blue-700 text-xl mb-2">Pantai Mawun</h3>
+          <p class="text-gray-700 text-sm text-center">Pantai yang indah dengan pasir putih dan ombak yang tenang, cocok untuk bersantai dan berenang.</p>
+          <a href="pantai-mawun.html" class="text-blue-600 font-semibold hover:underline mt-4">Lihat Detail</a>
+        </div>
+
+        <!-- Destinasi 4: Air Terjun Sendang Gile -->
+        <div class="bg-white rounded-2xl shadow p-6 flex flex-col items-center group hover:shadow-lg transition">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/sendang-gile.png" alt="Air Terjun Sendang Gile" class="rounded-lg mb-4 object-cover w-full h-[180px]">
+          <h3 class="font-bold text-lg text-blue-700 mb-2">Air Terjun Sendang Gile</h3>
+          <p class="text-gray-700 text-sm text-center">Air terjun yang menakjubkan di Senaru, dikelilingi oleh hutan tropis yang rimbun.</p>
+          <a href="air-terjun-sendang-gile.html" class="text-blue-600 font-semibold hover:underline mt-4">Lihat Detail</a>
+        </div>
+
+        <!-- Destinasi 5: Pantai Tanjung Aan -->
+        <div class="bg-white rounded-2xl shadow p-6 flex flex-col items-center group hover:shadow-lg transition">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/tanjung-aan.png" alt="Pantai Tanjung Aan" class="rounded-lg mb-4 object-cover w-full h-[180px]">
+          <h3 class="font-bold text-lg text-blue-700 mb-2">Pantai Tanjung Aan</h3>
+          <p class="text-gray-700 text-sm text-center">Pantai yang terkenal dengan pasirnya yang unik dan pemandangan yang menakjubkan.</p>
+          <a href="pantai-tanjung-aan.html" class="text-blue-600 font-semibold hover:underline mt-4">Lihat Detail</a>
+        </div>
+
+        <!-- Destinasi 6: Gili Nanggu -->
+        <div class="bg-white rounded-2xl shadow p-6 flex flex-col items-center group hover:shadow-lg transition">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/gili-nanggu.png" alt="Gili Nanggu" class="rounded-lg mb-4 object-cover w-full h-[180px]">
+          <h3 class="font-bold text-lg text-blue-700 mb-2">Gili Nanggu</h3>
+          <p class="text-gray-700 text-sm text-center">Pulau kecil yang tenang, ideal untuk snorkeling dan bersantai di pantai yang sepi.</p>
+          <a href="gili-nanggu.html" class="text-blue-600 font-semibold hover:underline mt-4">Lihat Detail</a>
+        </div>
+
+        <!-- Destinasi 7: Pantai Gerupuk -->
+        <div class="bg-white rounded-2xl shadow p-6 flex flex-col items-center group hover:shadow-lg transition">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/pantai-gerupuk.png" alt="Pantai Gerupuk" class="rounded-lg mb-4 object-cover w-full h-[180px]">
+          <h3 class="font-bold text-lg text-blue-700 mb-2">Pantai Gerupuk</h3>
+          <p class="text-gray-700 text-sm text-center">Pantai yang terkenal dengan ombaknya yang cocok untuk surfing dan pemandangan yang indah.</p>
+          <a href="pantai-gerupuk.html" class="text-blue-600 font-semibold hover:underline mt-4">Lihat Detail</a>
+        </div>
+
+        <!-- Destinasi 8: Bukit Selong -->
+        <div class="bg-white rounded-2xl shadow p-6 flex flex-col items-center group hover:shadow-lg transition">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bukit-selong.png" alt="Bukit Selong" class="rounded-lg mb-4 object-cover w-full h-[180px]">
+          <h3 class="font-bold text-lg text-blue-700 mb-2">Bukit Selong</h3>
+          <p class="text-gray-700 text-sm text-center">Tempat yang populer untuk menikmati pemandangan indah dari atas bukit, terutama saat sunrise.</p>
+          <a href="bukit-selong.html" class="text-blue-600 font-semibold hover:underline mt-4">Lihat Detail</a>
+        </div>
+
+      </div>
+      <!-- Tombol "Kembali" -->
+      <div class="text-center mt-10">
+        <a href="wisata.html" class="inline-block bg-blue-600 text-white font-bold px-8 py-3 rounded-full shadow-lg hover:bg-blue-700 hover:scale-105 transition-all duration-300">
+          Kembali
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (Disalin dari index.html untuk konsistensi) -->
+  <footer class="bg-blue-800 text-white mt-12 py-7">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center px-6 gap-4">
+      <div>
+        <span class="font-brand font-bold text-lg">Lombok Wanderlust</span> <span class="text-gray-300">© 2024</span>
+        <span class="text-gray-400 hidden md:inline-block ml-3">All Rights Reserved.</span>
+      </div>
+      <div class="flex gap-6">
+        <a href="index.html#explore" class="hover:underline text-gray-200">Paket Wisata</a>
+        <a href="index.html#about" class="hover:underline text-gray-200">Tentang</a>
+        <a href="index.html#contact" class="hover:underline text-gray-200">Kontak</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Social Media Widgets (Disalin dari index.html untuk konsistensi) -->
+  <div class="fixed flex flex-col gap-3 z-40" style="right:2rem;bottom:2rem;">
+    <a href="https://wa.me/62811222333" target="_blank" rel="noopener" aria-label="Whatsapp Lombok Wanderlust"
+      class="bg-green-500 hover:bg-green-600 text-white rounded-full p-3 shadow-xl flex items-center justify-center transition">
+      <!-- WhatsApp SVG -->
+      <svg width="28" height="28" fill="currentColor" viewBox="0 0 32 32">
+        <path d="M16.003 5.334c-5.894 0-10.67 4.78-10.67 10.67a10.61 10.61 0 001.502 5.475l-1.565 5.623a1.337 1.337 0 001.637 1.641l5.583-1.566A10.644 10.644 0 0016 26.67c5.892 0 10.669-4.779 10.669-10.667 0-5.89-4.777-10.669-10.666-10.669zm0 19.186a8.491 8.491 0 01-4.331-1.19l-.312-.184-3.316.933.938-3.23-.203-.329a8.453 8.453 0 01-1.41-4.653c0-4.679 3.811-8.489 8.489-8.489 4.678 0 8.488 3.81 8.488 8.489s-3.811 8.489-8.489 8.489zm4.274-6.386c-.227-.114-1.344-.664-1.552-.74-.208-.076-.36-.114-.512.114-.152.228-.585.74-.717.893-.133.152-.264.171-.491.057-.228-.114-.959-.353-1.825-1.124-.675-.601-1.13-1.344-1.263-1.572-.133-.228-.014-.351.1-.464.102-.102.227-.265.34-.398.115-.133.151-.228.227-.379.075-.15.037-.285-.019-.398-.057-.114-.508-1.231-.697-1.686-.184-.439-.373-.378-.512-.385l-.433-.009c-.151 0-.396.057-.604.266s-.793.774-.793 
