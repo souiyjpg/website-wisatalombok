@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Galeri - Lombok Wanderlust</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts for Heading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+    }
+    .font-brand {
+      font-family: 'Montserrat', Arial, sans-serif;
+      letter-spacing: 1.5px;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <header class="fixed w-full bg-white shadow-md z-20">
+    <nav class="flex items-center justify-between px-6 py-3 max-w-7xl mx-auto">
+      <div class="flex items-center gap-2">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-cyan-400 flex items-center justify-center shadow">
+          <img
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0937cc3b-ceb1-4417-96e8-bed5efc2a3ce.png"
+            alt="Logo Lomboko Wanderlust"
+            class="w-8 h-8 rounded-full"
+            onerror='this.style.display="none";this.parentNode.style.background="#1e40af";this.parentNode.innerHTML="<span style=\"color:white;font-size:20px;font-weight:bold;\">LW</span>";'
+          />
+        </div>
+        <a href="index.html" class="font-brand font-extrabold text-xl tracking-wider text-blue-700 hover:text-blue-800 transition">Lombok Wanderlust</a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex gap-6 font-medium text-gray-700">
+        <a href="#explore" class="hover:text-blue-700 transition">Paket Wisata</a>
+        <a href="wisata.html" class="hover:text-blue-700 transition">Destinasi</a>
+        <a href="gallery.html" class="hover:text-blue-700 transition">Galeri</a>
+        <a href="#about" class="hover:text-blue-700 transition">Tentang</a>
+        <a href="#contact" class="hover:text-blue-700 transition">Kontak</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Galeri Section -->
+  <section class="max-w-7xl mx-auto px-6 py-20">
+    <h2 class="font-brand text-3xl md:text-4xl font-bold text-blue-700 text-center mb-10">Galeri Foto Lombok</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- Gambar 1 -->
+      <div class="overflow-hidden rounded-lg shadow-lg">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/381dafdc-ae43-477f-934d-0e3c2b51ad49.png" alt="Gambar 1" class="w-full h-48 object-cover">
+      </div>
+      <!-- Gambar 2 -->
+      <div class="overflow-hidden rounded-lg shadow-lg">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7a9e2be1-b1e8-4154-bb76-1c7767310968.png" alt="Gambar 2" class="w-full h-48 object-cover">
+      </div>
+      <!-- Gambar 3 -->
+      <div class="overflow-hidden rounded-lg shadow-lg">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5c691274-94a2-4a71-b00b-fcbd4bb08a72.png" alt="Gambar 3" class="w-full h-48 object-cover">
+      </div>
+      <!-- Gambar 4 -->
+      <div class="overflow-hidden rounded-lg shadow-lg">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3b279da1-2bc3-4618-9772-e831692112f2.png" alt="Gambar 4" class="w-full h-48 object-cover">
+      </div>
+      <!-- Gambar 5 -->
+      <div class="overflow-hidden rounded-lg shadow-lg">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bba4270f-5218-40da-a0ba-be03926079dd.png" alt="Gambar 5" class="w-full h-48 object-cover">
+      </div>
+      <!-- Gambar 6 -->
+      <div class="overflow-hidden rounded-lg shadow-lg">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7fea5657-2bdb-4f2a-af8f-3bc99e1b43fc.png" alt="Gambar 6" class="w-full h-48 object-cover">
+      </div>
+      <!-- Gambar 7 -->
+      <div class="overflow-hidden rounded-lg shadow-lg">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/eda12ada-d11a-4763-941a-599c92f9581d.png" alt="Gambar 7" class="w-full h-48 object-cover">
+      </div>
+      <!-- Gambar 8 -->
+      <div class="overflow-hidden rounded-lg shadow-lg">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cc7d7edf-c125-4abf-babe-4a050446c1ab.png" alt="Gambar 8" class="w-full h-48 object-cover">
+      </div>
+      <!-- Gambar 9 -->
+      <div class="overflow-hidden rounded-lg shadow-lg">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7a9e2be1-b1e8-4154-bb76-1c7767310968.png" alt="Gambar 9" class="w-full h-48 object-cover">
+      </div>
+      <!-- Gambar 10 -->
+      <div class="overflow-hidden rounded-lg shadow-lg">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5c691274-94a2-4a71-b00b-fcbd4bb08a72.png" alt="Gambar 10" class="w-full h-48 object-cover">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white py-6">
+    <div class="max-w-7xl mx-auto text-center text-gray-600">
+      <p class="text-sm">&copy; 2023 Lombok Wanderlust. All rights reserved.</p>
+      <p class="text-sm">Follow us on <a href="#" class="text-blue-600 hover:underline">Instagram</a> | <a href="#" class="text-blue-600 hover:underline">Facebook</a></p>
+    </div>
+  </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Galeri - Lombok Wanderlust</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts for Heading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+    }
+    .font-brand {
+      font-family: 'Montserrat', Arial, sans-serif;
+      letter-spacing: 1.5px;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <header class="fixed w-full bg-white shadow-md z-20">
+    <nav class="flex items-center justify-between px-6 py-3 max-w-7xl mx-auto">
+      <div class="flex items-center gap-2">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-cyan-400 flex items-center justify-center shadow">
+          <img
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0937cc3b-ceb1-4417-96e8-bed5efc2a3ce.png"
+            alt="Logo Lomboko Wanderlust"
+            class="w-8 h-8 rounded-full"
+            onerror='this.style.display="none";this.parentNode.style.background="#1e40af";this.parentNode.innerHTML="<span style=\"color:white;font-size:20px;font-weight:bold;\">LW</span>";'
+          />
+        </div>
+        <a href="index.html" class="font-brand font-extrabold text-xl tracking-wider text-blue-700 hover:text-blue-800 transition">Lombok Wanderlust</a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex gap-6 font-medium text-gray-700">
+        <a href="#explore" class="hover:text-blue-700 transition">Paket Wisata</a>
+        <a href="wisata.html" class="hover:text-blue-700 transition">Destinasi</a>
+        <a href="gallery.html" class="hover:text-blue-700 transition">Galeri</a>
+        <a href="#about" class="hover:text-blue-700 transition">Tentang</a>
+        <a href="#contact" class="hover:text-blue-700 transition">Kontak</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Galeri Section -->
+  <section class="max-w-7xl mx-auto px-6 py-20">
+    <h2 class="font-brand text-3xl md:text-4xl font-bold text-blue-700 text-center mb-10">Galeri Foto Lombok</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- Gambar 1 -->
+      <div class="overflow-hidden rounded-lg shadow-lg">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/381dafdc-ae43-477f-934d-0e3c2b51ad49.png" alt="Gambar 1" class="w-full h-48 object-cover">
+      </div>
+      <!-- Gambar 2 -->
+      <div class="overflow-hidden rounded-lg shadow-lg">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7a9e2be1-b1e8-4154-bb76-1c7767310968.png" alt="Gambar 2" class="w-full h-48 object-cover">
+      </div>
+      <!-- Gambar 3 -->
+      <div class="overflow-hidden rounded-lg shadow-lg">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5c691274-94a2-4a71-b00b-fcbd4bb08a72.png" alt="Gambar 3" class="w-full h-48 object-cover">
+      </div>
+      <!-- Gambar 4 -->
+      <div class="overflow-hidden rounded-lg shadow-lg">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3b279da1-2bc3-4618-9772-e831692112f2.png" alt="Gambar 4" class="w-full h-48 object-cover">
+      </div>
+      <!-- Gambar 5 -->
+      <div class="overflow-hidden rounded-lg shadow-lg">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bba4270f-5218-40da-a0ba-be03926079dd.png" alt="Gambar 5" class="w-full h-48 object-cover">
+      </div>
+      <!-- Gambar 6 -->
+      <div class="overflow-hidden rounded-lg shadow-lg">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7fea5657-2bdb-4f2a-af8f-3bc99e1b43fc.png" alt="Gambar 6" class="w-full h-48 object-cover">
+      </div>
+      <!-- Gambar 7 -->
+      <div class="overflow-hidden rounded-lg shadow-lg">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/eda12ada-d11a-4763-941a-599c92f9581d.png" alt="Gambar 7" class="w-full h-48 object-cover">
+      </div>
+      <!-- Gambar 8 -->
+      <div class="overflow-hidden rounded-lg shadow-lg">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cc7d7edf-c125-4abf-babe-4a050446c1ab.png" alt="Gambar 8" class="w-full h-48 object-cover">
+      </div>
+      <!-- Gambar 9 -->
+      <div class="overflow-hidden rounded-lg shadow-lg">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7a9e2be1-b1e8-4154-bb76-1c7767310968.png" alt="Gambar 9" class="w-full h-48 object-cover">
+      </div>
+      <!-- Gambar 10 -->
+      <div class="overflow-hidden rounded-lg shadow-lg">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5c691274-94a2-4a71-b00b-fcbd4bb08a72.png" alt="Gambar 10" class="w-full h-48 object-cover">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white py-6">
+    <div class="max-w-7xl mx-auto text-center text-gray-600">
+      <p class="text-sm">&copy; 2023 Lombok Wanderlust. All rights reserved.</p>
+      <p class="text-sm">Follow us on <a href="#" class="text-blue-600 hover:underline">Instagram</a> | <a href="#" class="text-blue-600 hover:underline">Facebook</a></p>
+    </div>
+  </footer>
+</body>
+</html>
