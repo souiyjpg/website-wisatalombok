@@ -219,9 +219,70 @@
           </div>
 
           <div class="mt-8 text-center">
-            <a href="https://wa.me/62811222333?text=Halo%20Lombok%20Wanderlust,%20saya%20tertarik%20dengan%20paket%20Shopping%20Souvenir." target="_blank" rel="noopener" class="inline-block bg-green-500 text-white font-bold px-8 py-4 rounded-full shadow-lg hover:bg-green-600 hover:scale-105 transition-all duration-300">
-              Pesan Sekarang via WhatsApp
-            </a>
+            <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+  <!-- WhatsApp Button -->
+  <a href="#" onclick="bookViaWhatsApp()" class="inline-flex items-center justify-center gap-2 bg-green-500 text-white font-bold px-6 py-3 rounded-full shadow-lg hover:bg-green-600 hover:scale-105 transition-all duration-300">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+    </svg>
+    Pesan via WhatsApp
+  </a>
+  
+  <!-- Email Button -->
+  <a href="#" onclick="bookViaEmail()" class="inline-flex items-center justify-center gap-2 bg-blue-500 text-white font-bold px-6 py-3 rounded-full shadow-lg hover:bg-blue-600 hover:scale-105 transition-all duration-300">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+    </svg>
+    Pesan via Email
+  </a>
+  
+  <!-- Telegram Button -->
+  <a href="#" onclick="bookViaTelegram()" class="inline-flex items-center justify-center gap-2 bg-cyan-500 text-white font-bold px-6 py-3 rounded-full shadow-lg hover:bg-cyan-600 hover:scale-105 transition-all duration-300">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+    </svg>
+    Pesan via Telegram
+  </a>
+</div>
+
+<script>
+function bookPackage(packageName, packagePrice, minPerson) {
+  return {
+    subject: `Pemesanan Paket ${packageName}`,
+    body: `Hello Lombok Wanderlust,\n\nSaya ingin memesan:\n\n*Paket:* ${packageName}\n*Harga:* Rp${packagePrice.toLocaleString('id-ID')}/orang\n*Peserta Minimum:* ${minPerson} orang\n\n*Detail Peserta:*\n- Nama Lengkap:\n- Nomor Telepon:\n- Tanggal Tour:\n- Jumlah Peserta:\n- Alamat Penjemputan (jika ada):\n\n*Pertanyaan:*\n1. Apakah tanggal ini tersedia?\n2. Bagaimana prosedur pembayarannya?\n3. Apa yang perlu dipersiapkan?\n\nTerima kasih.`
+  };
+}
+
+function bookViaWhatsApp() {
+  const packageInfo = bookPackage("Nama Paket", 1000000, 2);
+  const message = encodeURIComponent(packageInfo.body);
+  window.open(`https://wa.me/+6285678910?text=${message}`, '_blank');
+}
+
+function bookViaEmail() {
+  const packageInfo = bookPackage("Nama Paket", 1000000, 2);
+  const subject = encodeURIComponent(packageInfo.subject);
+  const body = encodeURIComponent(packageInfo.body);
+  window.open(`mailto:ggadffe@gmail.com?subject=${subject}&body=${body}`, '_blank');
+}
+
+function bookViaTelegram() {
+  const packageInfo = bookPackage("Nama Paket", 1000000, 2);
+  const message = encodeURIComponent(packageInfo.body);
+  window.open(`https://t.me/Lombok?text=${message}`, '_blank');
+}
+</script>
+
+          </div>
+        </div>
+        <div class="mt-8 text-center">
+          <a href="paket-wisata.html" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-full shadow hover:bg-blue-700 transition">
+            &larr; Kembali ke Daftar Paket Wisata
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
           </div>
         </div>
         <div class="mt-8 text-center">
@@ -253,4 +314,37 @@
     <a href="https://wa.me/62811222333" target="_blank" rel="noopener" aria-label="Whatsapp Lombok Wanderlust"
       class="bg-green-500 hover:bg-green-600 text-white rounded-full p-3 shadow-xl flex items-center justify-center transition">
       <svg width="28" height="28" fill="currentColor" viewBox="0 0 32 32">
-        <path d="M16.003 5.334c-5.894 0-10.67 4.78-10.67 10.67a10.61 10.61 0 001.502 5.475l-1.565 5.623a1.337 1.337 0 001.637 1.641l5.583-1.566A10.644 10.644 0 0016 26.67c5.892 0 10.669-4.779 10.669-10.667 0-5.89-4.777-10.669-10.666-10.669zm0 19.186a8.491 8.491 0 01-4.331-1.19l-.312-.184-3.316.933.938-3.23-.203-.329a8.453 8.453 0 01-1.41-4.653c0-4.679 3.811-8.489 8.489-8.489 4.678 0 8.488 3.81 8.488 8.489s-3.811 8.489-8.489 8.489zm4.274-6.386c-.227-.114-1.344-.664-1.552-.74-.208-.076-.36-.114-.512.114-.152.228-.585.74-.717.893-.133.152-.264.171-.491.057-.228-.114-.959-.353-1.825-1.124-.675-.601-1.13-1.344-1.263-1.572-.133-.228-.014-.351.1-.464.102-.102.227-.265.34-.398.115-.133.151-.228.227-.379.075-.15.037-.285-.019-.398-.057-.114-.508-1.231-.697-1.686-.184-.439-.373-.378-.512-.385l-.433-.009c-.151 0-.396.057-.604.266s-.793.774
+        <path d="M16.003 5.334c-5.894 0-10.67 4.78-10.67 10.67a10.61 10.61 0 001.502 5.475l-1.565 5.623a1.337 1.337 0 001.637 1.641l5.583-1.566A10.644 10.644 0 0016 26.67c5.892 0 10.669-4.779 10.669-10.667 0-5.89-4.777-10.669-10.666-10.669zm0 19.186a8.491 8.491 0 01-4.331-1.19l-.312-.184-3.316.933.938-3.23-.203-.329a8.453 8.453 0 01-1.41-4.653c0-4.679 3.811-8.489 8.489-8.489 4.678 0 8.488 3.81 8.488 8.489s-3.811 8.489-8.489 8.489zm4.274-6.386c-.227-.114-1.344-.664-1.552-.74-.208-.076-.36-.114-.512.114-.152.228-.585.74-.717.893-.133.152-.264.171-.491.057-.228-.114-.959-.353-1.825-1.124-.675-.601-1.13-1.344-1.263-1.572-.133-.228-.014-.351.1-.464.102-.102.227-.265.34-.398.115-.133.151-.228.227-.379.075-.15.037-.285-.019-.398-.057-.114-.508-1.231-.697-1.686-.184-.439-.373-.378-.512-.385l-.433-.009c-.151 0-.396.057-.604.266s-.793.774-.793 1.887.812 2.196.924 2.348c.113.152 1.604 2.448 3.895 3.337.544.187.967.299 1.297.383.545.138 1.041.119 1.431.072.437-.053 1.344-.548 1.534-1.078.19-.53.19-.984.133-1.077-.056-.094-.207-.152-.434-.266z"/>
+      </svg>
+    </a>
+    <a href="https://t.me/lombokwanderlust" target="_blank" rel="noopener" aria-label="Telegram Lombok Wanderlust"
+      class="bg-blue-400 hover:bg-blue-600 text-white rounded-full p-3 shadow-xl flex items-center justify-center transition">
+      <svg width="28" height="28" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+        <circle cx="120" cy="120" r="120" fill="#37AEE2"/>
+        <path d="M168 77c2-1 4 0 4 2l-21 101c0 2-3 3-4 1l-30-22-15 14c-1 1-3 1-3-1l3-19 66-62c1-1-1-2-2-1l-81 51-17-5c-2 0-2-2 0-3l134-53z" fill="#FFF"/>
+      </svg>
+    </a>
+    <a href="mailto:support@lombokwanderlust.com" aria-label="Email Lombok Wanderlust"
+      class="bg-red-500 hover:bg-red-600 text-white rounded-full p-3 shadow-xl flex items-center justify-center transition">
+      <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2.003 5.884L11.999 11.884L21.997 5.884C21.997 5.884 22 5.884 22 5.884V18.001C22 19.105 21.105 20.001 20 20.001H4C2.895 20.001 2 19.105 2 18.001V5.884C2 5.884 2.003 5.884 2.003 5.884ZM20 4.001H4C3.447 4.001 3 4.448 3 5.001V5.884L12 11.384L21 5.884V5.001C21 4.448 20.553 4.001 20 4.001Z"/>
+      </svg>
+    </a>
+  </div>
+
+  <script>
+    // Mobile Menu Toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when a link is clicked (optional, but good UX)
+    document.querySelectorAll('#mobile-menu a').forEach(item => {
+      item.addEventListener('click', () => {
+        document.getElementById('mobile-menu').classList.add('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
