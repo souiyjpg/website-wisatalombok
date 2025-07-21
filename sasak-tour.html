@@ -168,9 +168,70 @@
           </p>
 
           <div class="mt-8 text-center">
-            <a href="https://wa.me/62811222333?text=Halo%20Lombok%20Wanderlust,%20saya%20tertarik%20dengan%20paket%20Sasak%20Tour." target="_blank" rel="noopener" class="inline-block bg-green-500 text-white font-bold px-8 py-4 rounded-full shadow-lg hover:bg-green-600 hover:scale-105 transition-all duration-300">
-              Pesan Sekarang via WhatsApp
-            </a>
+           <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+  <!-- WhatsApp Button -->
+  <a href="#" onclick="bookViaWhatsApp()" class="inline-flex items-center justify-center gap-2 bg-green-500 text-white font-bold px-6 py-3 rounded-full shadow-lg hover:bg-green-600 hover:scale-105 transition-all duration-300">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+    </svg>
+    Pesan via WhatsApp
+  </a>
+  
+  <!-- Email Button -->
+  <a href="#" onclick="bookViaEmail()" class="inline-flex items-center justify-center gap-2 bg-blue-500 text-white font-bold px-6 py-3 rounded-full shadow-lg hover:bg-blue-600 hover:scale-105 transition-all duration-300">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+    </svg>
+    Pesan via Email
+  </a>
+  
+  <!-- Telegram Button -->
+  <a href="#" onclick="bookViaTelegram()" class="inline-flex items-center justify-center gap-2 bg-cyan-500 text-white font-bold px-6 py-3 rounded-full shadow-lg hover:bg-cyan-600 hover:scale-105 transition-all duration-300">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+    </svg>
+    Pesan via Telegram
+  </a>
+</div>
+
+<script>
+function bookPackage(packageName, packagePrice, minPerson) {
+  return {
+    subject: `Pemesanan Paket ${packageName}`,
+    body: `Hello Lombok Wanderlust,\n\nSaya ingin memesan:\n\n*Paket:* ${packageName}\n*Harga:* Rp${packagePrice.toLocaleString('id-ID')}/orang\n*Peserta Minimum:* ${minPerson} orang\n\n*Detail Peserta:*\n- Nama Lengkap:\n- Nomor Telepon:\n- Tanggal Tour:\n- Jumlah Peserta:\n- Alamat Penjemputan (jika ada):\n\n*Pertanyaan:*\n1. Apakah tanggal ini tersedia?\n2. Bagaimana prosedur pembayarannya?\n3. Apa yang perlu dipersiapkan?\n\nTerima kasih.`
+  };
+}
+
+function bookViaWhatsApp() {
+  const packageInfo = bookPackage("Nama Paket", 1000000, 2);
+  const message = encodeURIComponent(packageInfo.body);
+  window.open(`https://wa.me/+6285678910?text=${message}`, '_blank');
+}
+
+function bookViaEmail() {
+  const packageInfo = bookPackage("Nama Paket", 1000000, 2);
+  const subject = encodeURIComponent(packageInfo.subject);
+  const body = encodeURIComponent(packageInfo.body);
+  window.open(`mailto:ggadffe@gmail.com?subject=${subject}&body=${body}`, '_blank');
+}
+
+function bookViaTelegram() {
+  const packageInfo = bookPackage("Nama Paket", 1000000, 2);
+  const message = encodeURIComponent(packageInfo.body);
+  window.open(`https://t.me/Lombok?text=${message}`, '_blank');
+}
+</script>
+
+          </div>
+        </div>
+        <div class="mt-8 text-center">
+          <a href="paket-wisata.html" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-full shadow hover:bg-blue-700 transition">
+            &larr; Kembali ke Daftar Paket Wisata
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
           </div>
         </div>
         <div class="mt-8 text-center">
