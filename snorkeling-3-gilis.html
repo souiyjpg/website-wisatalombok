@@ -188,8 +188,7 @@
             Paket "Snorkeling 3 Gilis" adalah pilihan sempurna untuk Anda yang ingin merasakan pengalaman snorkeling terbaik di Lombok dengan mengunjungi tiga gili utama dalam satu hari. Pesan sekarang dan buat kenangan tak terlupakan di bawah laut!
           </p>
 
-          <div class="mt-8 text-center">
-           <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+         <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
   <!-- WhatsApp Button -->
   <a href="#" onclick="bookViaWhatsApp()" class="inline-flex items-center justify-center gap-2 bg-green-500 text-white font-bold px-6 py-3 rounded-full shadow-lg hover:bg-green-600 hover:scale-105 transition-all duration-300">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -216,31 +215,206 @@
 </div>
 
 <script>
-function bookPackage(packageName, packagePrice, minPerson) {
-  return {
-    subject: `Pemesanan Paket ${packageName}`,
-    body: `Hello Lombok Wanderlust,\n\nSaya ingin memesan:\n\n*Paket:* ${packageName}\n*Harga:* Rp${packagePrice.toLocaleString('id-ID')}/orang\n*Peserta Minimum:* ${minPerson} orang\n\n*Detail Peserta:*\n- Nama Lengkap:\n- Nomor Telepon:\n- Tanggal Tour:\n- Jumlah Peserta:\n- Alamat Penjemputan (jika ada):\n\n*Pertanyaan:*\n1. Apakah tanggal ini tersedia?\n2. Bagaimana prosedur pembayarannya?\n3. Apa yang perlu dipersiapkan?\n\nTerima kasih.`
+// Function to extract package details from the current page
+function getPackageDetailsFromPage() {
+  try {
+    // Get package name - look for h1 containing "Paket"
+    const packageNameElement = Array.from(document.querySelectorAll('h1')).find(h1 => 
+      h1.textContent.includes('Paket')
+    );
+    const packageName = packageNameElement ? 
+      packageNameElement.textContent.replace('Paket', '').trim() : 
+      'Paket Wisata';
+
+    // Get package price - look for common price patterns
+    const priceElement = Array.from(document.querySelectorAll('p, span, div')).find(el => {
+      const text = el.textContent.trim();
+      return text.includes('Rp') || text.includes('Harga') || text.includes('IDR');
+    });
+    
+    let priceValue = 0;
+    if (priceElement) {
+      const priceMatch = priceElement.textContent.match(/Rp\s*(\d[\d.,]*)/) || 
+                        priceElement.textContent.match(/(\d[\d.,]*)\s*(?:IDR|Rp)/);
+      if (priceMatch) {
+        priceValue = parseInt(priceMatch[1].replace(/[.,]/g, ''));
+      }
+    }
+
+    // Get minimum participants (default to 2 if not found)
+    const minPerson = 2;
+
+    // Get included destinations
+    const destinations = [];
+    const destinationElements = document.querySelectorAll('h3, h4');
+    destinationElements.forEach(el => {
+      if (el.textContent.trim() && !el.textContent.includes('Termasuk') && 
+          !el.textContent.includes('Jadwal') && !el.textContent.includes('Bawa')) {
+        destinations.push(el.textContent.trim());
+      }
+    });
+
+    return {
+      name: packageName,
+      price: priceValue,
+      minPerson: minPerson,
+      destinations: destinations.filter((v, i, a) => a.indexOf(v) === i).join(', ')
+    };
+  } catch (error) {
+    console.error('Error extracting package details:', error);
+    return {
+      name: 'Paket Wisata',
+      price: 0,
+      minPerson: 2,
+      destinations: 'Berbagai destinasi menarik'
+    };
+  }
+}
+
+// Function to create booking form
+function showBookingForm() {
+  const package = getPackageDetailsFromPage();
+  
+  // Create form HTML
+  const formHTML = `
+    <div id="booking-overlay" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <div class="bg-white rounded-lg p-6 w-full max-w-md">
+        <h3 class="font-bold text-xl mb-4">Pesan ${package.name}</h3>
+        
+        <form id="booking-form">
+          <div class="mb-4">
+            <label class="block text-gray-700 mb-2">Nama Lengkap</label>
+            <input type="text" name="fullName" required 
+                   class="w-full px-3 py-2 border rounded-lg">
+          </div>
+          
+          <div class="mb-4">
+            <label class="block text-gray-700 mb-2">Nomor HP</label>
+            <input type="tel" name="phone" required
+                   class="w-full px-3 py-2 border rounded-lg">
+          </div>
+          
+          <div class="mb-4">
+            <label class="block text-gray-700 mb-2">Email</label>
+            <input type="email" name="email" required
+                   class="w-full px-3 py-2 border rounded-lg">
+          </div>
+          
+          <div class="mb-4">
+            <label class="block text-gray-700 mb-2">Tanggal Tour</label>
+            <input type="date" name="tourDate" required
+                   class="w-full px-3 py-2 border rounded-lg">
+          </div>
+          
+          <div class="mb-4">
+            <label class="block text-gray-700 mb-2">Jumlah Peserta</label>
+            <input type="number" name="participants" min="${package.minPerson}" 
+                   value="${package.minPerson}" required
+                   class="w-full px-3 py-2 border rounded-lg">
+          </div>
+          
+          <div class="mb-4">
+            <label class="block text-gray-700 mb-2">Alamat Penjemputan (jika ada)</label>
+            <textarea name="pickup" class="w-full px-3 py-2 border rounded-lg"></textarea>
+          </div>
+          
+          <div class="flex justify-between mt-6">
+            <button type="button" onclick="closeBookingForm()" 
+                    class="px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400">
+              Batal
+            </button>
+            <div class="flex gap-2">
+              <button type="button" onclick="submitBooking('whatsapp')" 
+                      class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                </svg>
+                WhatsApp
+              </button>
+              <button type="button" onclick="submitBooking('email')" 
+                      class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                Email
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  `;
+  
+  // Add to body
+  document.body.insertAdjacentHTML('beforeend', formHTML);
+}
+
+function closeBookingForm() {
+  const overlay = document.getElementById('booking-overlay');
+  if (overlay) overlay.remove();
+}
+
+function submitBooking(method) {
+  const form = document.getElementById('booking-form');
+  if (!form) return;
+  
+  const package = getPackageDetailsFromPage();
+  const formData = new FormData(form);
+  const customer = Object.fromEntries(formData.entries());
+  
+  const message = {
+    subject: `Pemesanan Paket ${package.name}`,
+    body: `Halo Lombok Wanderlust,\n\nSaya ingin memesan paket wisata dengan detail berikut:\n\n` +
+          `*Paket Wisata:* ${package.name}\n` +
+          `*Harga:* Rp${package.price.toLocaleString('id-ID')}/orang\n` +
+          `*Destinasi:* ${package.destinations}\n` +
+          `*Peserta Minimum:* ${package.minPerson} orang\n\n` +
+          `*Data Pemesan:*\n` +
+          `- Nama Lengkap: ${customer.fullName}\n` +
+          `- Nomor HP: ${customer.phone}\n` +
+          `- Email: ${customer.email}\n` +
+          `- Tanggal Tour: ${customer.tourDate}\n` +
+          `- Jumlah Peserta: ${customer.participants}\n` +
+          `- Alamat Penjemputan: ${customer.pickup || 'Tidak ada'}\n\n` +
+          `Saya ingin konfirmasi ketersediaan untuk tanggal tersebut dan informasi lebih lanjut mengenai:\n` +
+          `1. Prosedur pembayaran\n` +
+          `2. Yang perlu dipersiapkan\n` +
+          `3. Itinerary lengkap\n\n` +
+          `Terima kasih.\n\n` +
+          `Salam,\n${customer.fullName}`
   };
+  
+  closeBookingForm();
+  
+  switch(method) {
+    case 'whatsapp':
+      window.open(`https://wa.me/62811222333?text=${encodeURIComponent(message.body)}`, '_blank');
+      break;
+    case 'email':
+      window.open(`mailto:support@lombokwanderlust.com?subject=${encodeURIComponent(message.subject)}&body=${encodeURIComponent(message.body)}`, '_blank');
+      break;
+    case 'telegram':
+      window.open(`https://t.me/lombokwanderlust?text=${encodeURIComponent(message.body)}`, '_blank');
+      break;
+  }
 }
 
-function bookViaWhatsApp() {
-  const packageInfo = bookPackage("Nama Paket", 1000000, 2);
-  const message = encodeURIComponent(packageInfo.body);
-  window.open(`https://wa.me/+6285678910?text=${message}`, '_blank');
-}
+// Update your booking buttons to use this instead:
+function bookViaWhatsApp() { showBookingForm(); }
+function bookViaEmail() { showBookingForm(); }
+function bookViaTelegram() { showBookingForm(); }
+</script>
 
-function bookViaEmail() {
-  const packageInfo = bookPackage("Nama Paket", 1000000, 2);
-  const subject = encodeURIComponent(packageInfo.subject);
-  const body = encodeURIComponent(packageInfo.body);
-  window.open(`mailto:ggadffe@gmail.com?subject=${subject}&body=${body}`, '_blank');
-}
-
-function bookViaTelegram() {
-  const packageInfo = bookPackage("Nama Paket", 1000000, 2);
-  const message = encodeURIComponent(packageInfo.body);
-  window.open(`https://t.me/Lombok?text=${message}`, '_blank');
-}
+<style>
+  /* Add this to your CSS */
+  #booking-form input, #booking-form textarea {
+    transition: all 0.3s;
+  }
+  #booking-form input:focus, #booking-form textarea:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  }
+</style>
 </script>
 
           </div>
@@ -253,16 +427,7 @@ function bookViaTelegram() {
       </div>
     </section>
   </main>
-          </div>
-        </div>
-        <div class="mt-8 text-center">
-          <a href="paket-wisata.html" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-full shadow hover:bg-blue-700 transition">
-            &larr; Kembali ke Daftar Paket Wisata
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
+
 
   <!-- Footer -->
   <footer class="bg-blue-800 text-white mt-12 py-7">
