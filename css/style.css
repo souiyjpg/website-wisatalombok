@@ -1,0 +1,64 @@
+/* Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+.font-brand {
+  font-family: 'Montserrat', Arial, sans-serif;
+  letter-spacing: 1.5px;
+}
+
+.glass {
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(8px);
+}
+
+.feature-card {
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px) scale(1.025);
+  box-shadow: 0 8px 32px rgba(45,88,176,0.07);
+  background: rgba(255,255,255,0.90);
+}
+
+/* search-suggestion related styles */
+.search-suggestion:focus-within .suggestion-list {
+  display: block;
+}
+
+.suggestion-list {
+  display: none;
+}
+
+/* Custom style for larger feature card images */
+.feature-card-img {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Gallery hover effect */
+.gallery-item {
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-caption {
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.gallery-item:hover .gallery-caption {
+  opacity: 1;
+}
